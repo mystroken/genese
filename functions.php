@@ -1,35 +1,28 @@
 <?php
+/**
+ * Genese functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package  WordPress
+ * @subpackage Genese
+ * @since 1.0
+ */
 
-add_action( 'wp_enqueue_scripts', 'assets', 100 );
-function assets() {
+$includes = [
+	'inc/setup.php',                 // Theme setup.
+	'inc/class-genese-wrapping.php', // Theme wrapper class.
+];
 
-	wp_enqueue_script(
-		'genese/vendors-js',
-		get_theme_file_uri('/assets/dist/js/vendors.app.js'),
-		[
-			'jquery',
-		],
-		filemtime( get_stylesheet_directory() . '/assets/dist/js/vendors.app.js' ),
-		true
-	);
+foreach ( $includes as $file ) {
 
-	wp_enqueue_script(
-		'genese/app-js',
-		get_theme_file_uri('/assets/dist/js/app.js'),
-		[
-			'jquery',
-		],
-		filemtime( get_stylesheet_directory() . '/assets/dist/js/app.js' ),
-		true
-	);
+	$filepath = locate_template( $file );
 
-	wp_enqueue_script(
-		'genese/main-js',
-		get_theme_file_uri('/assets/dist/js/main.app.js'),
-		[
-			'jquery',
-		],
-		filemtime( get_stylesheet_directory() . '/assets/dist/js/main.app.js' ),
-		true
-	);
+	if ( ! $filepath ) {
+		trigger_error( sprintf( __( 'Error locating %s for inclusion', 'genese' ), $file ), E_USER_ERROR );
+	}
+
+	require_once $filepath;
 }
+
+unset( $file, $filepath );
