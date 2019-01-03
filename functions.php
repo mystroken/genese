@@ -1,18 +1,22 @@
 <?php
 /**
- * Genese functions and definitions.
+ * Genese files includes
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * The $includes array determines the code library included in your theme.
+ * Add or remove files to the array as needed. Supports child theme overrides.
+ *
+ * Please note that missing files will produce a fatal error.
  *
  * @package  WordPress
  * @subpackage Genese
  * @since 1.0
  */
 
-$includes = [
-	'inc/setup.php',                 // Theme setup.
-	'inc/class-genese-wrapping.php', // Theme wrapper class.
-];
+$includes = array(
+	'app/inc/class-genese-wrapping.php', // Theme wrapper class.
+	'app/inc/helpers.php',               // Helper functions.
+	'app/inc/setup.php',                 // Theme setup.
+);
 
 foreach ( $includes as $file ) {
 

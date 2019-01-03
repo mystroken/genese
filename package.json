@@ -20,7 +20,7 @@
     "theme"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node resources/assets/start.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

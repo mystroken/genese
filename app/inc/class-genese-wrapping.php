@@ -10,6 +10,7 @@
  * @since 1.0
  */
 
+add_filter( 'template_include', array( 'Genese_Wrapping', 'wrap' ), 109 );
 /**
  * Theme Wrapper
  */
@@ -103,19 +104,4 @@ class Genese_Wrapping {
 		return new Genese_Wrapping();
 
 	}
-}
-
-add_filter( 'template_include', array( 'Genese_Wrapping', 'wrap' ), 109 );
-
-
-
-
-
-/**
- * Returns the full path to the main template file.
- *
- * @return string
- */
-function genese_template_path() {
-	return Genese_Wrapping::$main_template;
 }

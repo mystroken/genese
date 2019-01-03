@@ -15,26 +15,26 @@ module.exports = {
 	entry: [
 		// `reload=true` to automatically reload of HMR gets in a jam.
 		`webpack-hot-middleware/client?https://${HOST}:${PORT}&reload=true`,
-		'./assets/src/js/index.js',
+		'./resources/assets/src/js/index.js',
 		// !important, make sure an actual 'style.css' file ends up in the build directory
-		'./assets/src/scss/style.scss'
+		'./resources/assets/src/scss/style.scss'
 	],
 
 	output: {
 		// for simplicity, you can do build directly into local WP theme folder
 		// however, I prefer to build in my project 'dist' folder, and symlink via vagrant (or w/e tool you use, nginx?)
-		path: `/www/tehillah24/wp-content/themes/${THEME_NAME}/assets/dist`,
+		path: `/www/tehillah24/wp-content/themes/${THEME_NAME}/resources/assets/dist`,
 
 		// public path is your proxy server + theme path on the server
 		// for production, use '/'
-		publicPath: `//${HOST}:${PORT}/wp-content/themes/${THEME_NAME}/assets/dist/`,
+		publicPath: `//${HOST}:${PORT}/wp-content/themes/${THEME_NAME}/resources/assets/dist/`,
 		filename: 'js/app.js'
 	},
 
-	devtool: '#source-map',
+	devtool: '#cheap-source-map',
 
   devServer: {
-    contentBase: path.join(__dirname, 'assets/src'),
+    contentBase: path.join(__dirname, 'src'),
     watchContentBase: true,
     hot: true
   },
