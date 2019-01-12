@@ -1,0 +1,52 @@
+/**
+*  
+*   Partials/global/form
+*
+*   Style relating with form elements
+*
+*   @author: Emmanuel KWENE
+*   @email: kwene.emmanuel@gmail.com
+*   @website: http://www.mystro-ken.cm/
+*
+*   August 21, 2016!
+*
+*/
+
+
+input,
+button,
+select,
+textarea {
+  background-color: $input-background;
+  color: $input-text-color;
+
+  max-width: 100%;
+  padding: $input-padding;
+  vertical-align: middle;
+
+  text-align: $input-text-align;
+  transition: all ease-out $animation-duration;
+}
+
+input[type="file"],
+input[type="num"],
+input[type="url"],
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+select,
+textarea {
+  border-width: $input-border-width;
+  border-style: $input-border-style;
+  border-color: $input-border-color;
+  border-radius: $input-border-radius;
+
+  box-shadow: $input-shadow;
+
+  &:focus {
+    background-color: $input-focused-background;
+    box-shadow: $input-focused-shadow;
+    outline: inherit;
+  }
+}

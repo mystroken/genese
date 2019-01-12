@@ -1,0 +1,35 @@
+
+
+.widget {
+  background-color: #f0f0f0;
+  padding: 1rem;
+
+  &.widget_custom_html {
+    padding: 0;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+
+.widget-title {
+  //color: blue;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: transparent;
+  }
+}

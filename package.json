@@ -2,7 +2,7 @@
   "name": "genese",
   "version": "1.0.0",
   "description": "Genese is a WordPress starter theme.",
-  "main": "index.js",
+  "private": true,
   "author": "Mystro Ken <mystroken@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/mystroken/genese#readme",
@@ -20,7 +20,8 @@
     "theme"
   ],
   "scripts": {
-    "start": "node resources/assets/start.js"
+    "start": "node resources/scripts/start.js",
+    "build": "node resources/scripts/build.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -38,12 +39,18 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "bs-html-injector": "^3.0.3",
     "css-loader": "^0.28.11",
+    "cssnano": "^4.1.8",
     "eslint": "^5.5.0",
     "eslint-config-wordpress": "^2.0.0",
+    "filehound": "^1.16.5",
+    "fs-extra": "^7.0.1",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.8.3",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
     "sass-loader": "^7.0.3",
+    "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",

@@ -1,87 +1,126 @@
-const path = require('path');
-const webpack = require('webpack');
-const WriteFilePlugin = require('write-file-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+const path = require( 'path' );
+const url = require( 'url' );
+const webpack = require( 'webpack' );
+const WriteFilePlugin = require( 'write-file-webpack-plugin' );
+const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
+const Visualizer = require( 'webpack-visualizer-plugin' );
 
-const THEME_NAME = 'genese';
-const HOST = 'localhost';
-const PORT = 3000;
+const { PATHS, HOST, PORT, THEME_NAME, PROXY_TARGET } = require( './config' );
+const utils = require( '../scripts/utils' );
+
+const ENV = utils.getEnv();
+const WATCH = global.watch || false;
 
 module.exports = {
-	mode: 'development',
-	entry: [
-		// `reload=true` to automatically reload of HMR gets in a jam.
-		`webpack-hot-middleware/client?https://${HOST}:${PORT}&reload=true`,
-		'./resources/assets/src/js/index.js',
-		// !important, make sure an actual 'style.css' file ends up in the build directory
-		'./resources/assets/src/scss/style.scss'
-	],
+	mode: ENV,
+	entry: getEntry(),
 
 	output: {
-		// for simplicity, you can do build directly into local WP theme folder
-		// however, I prefer to build in my project 'dist' folder, and symlink via vagrant (or w/e tool you use, nginx?)
-		path: `/www/tehillah24/wp-content/themes/${THEME_NAME}/resources/assets/dist`,
-
-		// public path is your proxy server + theme path on the server
-		// for production, use '/'
-		publicPath: `//${HOST}:${PORT}/wp-content/themes/${THEME_NAME}/resources/assets/dist/`,
-		filename: 'js/app.js'
+		path: PATHS.compiled(),
+		publicPath: 'production' === ENV ? '/' : `//${HOST}:${PORT}/wp-content/themes/${THEME_NAME}/resources/assets/dist/`,
+		filename: 'js/[name].js',
+		sourceMapFilename: '[file].map'
 	},
 
-	devtool: '#cheap-source-map',
+	devtool: 'production' === ENV ? false : '#cheap-source-map',
 
-  devServer: {
-    contentBase: path.join(__dirname, 'src'),
-    watchContentBase: true,
-    hot: true
-  },
+	devServer: {
+		contentBase: path.join( __dirname, 'src' ),
+		watchContentBase: true,
+		hot: true
+	},
 
 	module: {
-	  rules: [
-		{
-		  test: /\.js$/,
-		  exclude: /node_modules/,
-		  use: {
-			loader: 'babel-loader'
-		  }
-		},
-		{
-		  test: /\.scss$/,
-		  use: [
-			'css-loader',
-			'sass-loader'
-		  ]
-		}
-	  ]
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
+			},
+			{
+				test: /\.(sa|sc|c)ss$/,
+				use: [
+					( 'production' === ENV ) ? MiniCssExtractPlugin.loader : 'style-loader',
+					'css-loader?importLoaders=1',
+					'postcss-loader',
+					'sass-loader'
+				]
+			}
+		]
 	},
 
 	optimization: {
-	  runtimeChunk: 'single',
-	  splitChunks: {
-		cacheGroups: {
-		  vendor: {
-			test: /[\\/]node_modules[\\/]/,
-			name: 'vendors',
-			chunks: 'all'
-		  }
-		}
-	  },
-	  minimizer: [new UglifyJsPlugin()],
+		minimizer: [
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				sourceMap: true
+			}),
+			new OptimizeCssAssetsPlugin({})
+		]
 	},
 
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
+	plugins: getPlugins( ENV ),
 
-		new MiniCssExtractPlugin(),
-		new OptimizeCssAssetsPlugin(),
-		new Visualizer({ filename: './stat.html' }),
+	target: 'web',
+
+	watch: WATCH
+};
+
+/*
+ * CONFIG ENV DEFINITIONS
+ */
+
+function getEntry() {
+	const entry = {};
+	let proxyURL = `http://${HOST}:${PORT}`;
+	entry.app = [ PATHS.src( 'index.js' ) ];
+	entry.app.push( PATHS.src( 'sass', 'style.scss' ) );
+
+	/**
+	 * We do this to enable injection over SSL.
+	 */
+	if ( 'https:' === url.parse( PROXY_TARGET ).protocol ) {
+		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+		proxyURL = proxyURL.replace( 'http:', 'https:' );
+	}
+
+	switch ( ENV ) {
+	case 'development':
+		entry.app.unshift( 'webpack/hot/only-dev-server' );
+		entry.app.unshift( `webpack-hot-middleware/client?${proxyURL}` );
+		break;
+	case 'production':
+		break;
+	}
+
+	return entry;
+}
+
+
+function getPlugins( env ) {
+	const plugins = [];
+
+	switch ( env ) {
+	case 'production':
+		plugins.push( new MiniCssExtractPlugin({ filename: 'css/[name].css' }) );
+
+		//plugins.push();
+		break;
+	case 'development':
 
 		// unnecessary, but nice.
 		// Webpack normally doesn't output files during the dev build, this will output your assets to your build path
 		// If you visit the local wp URL instead of the proxy, your assets will be there
-		new WriteFilePlugin()
-	]
-};
+		plugins.push( new WriteFilePlugin() );
+		plugins.push( new Visualizer({ filename: './stat.html' }) );
+		plugins.push( new webpack.HotModuleReplacementPlugin() );
+		break;
+	}
+
+	return plugins;
+}

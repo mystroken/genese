@@ -1,0 +1,114 @@
+/**
+*
+* 	Configs/variables
+*
+* 	File containing variables that help
+* 	the stylesheet project personalization.
+* 	MUST NEVER GENERATE ANY CODE!
+*
+*   @author: Mystro Ken
+*   @email: mystroken@gmail.com
+*   @website: http://www.mystroken.com/
+*
+*	  October 29, 2017!
+*
+*/
+/*!
+ * Flexyla CSS v1.2 by @mystroken - http://www.mystroken.com
+ * License: MIT • mystroken@gmail.com
+ */
+
+// Set somme vendors variables
+// ## Font Awesome
+$fa-font-path: "../fonts/fontawesome" !default;
+
+
+// 1 - ## Colors
+$color-primary:         #32cd32 !default;
+$color-primary-dark:    darken($color-primary, 10) !default;
+$color-primary-light:   lighten($color-primary, 10) !default;
+$color-secondary:       #002aca !default;
+$color-text-primary:    rgba(#000, .84) !default;
+$color-text-secondary:  rgba(#000, .54) !default;
+$color-link:            $color-text-primary !default;
+$color-body:            #FFF !default;
+$color-info:            #144E93 !default;
+$color-error:           #991717 !default;
+$color-warning:         #D8CA21 !default;
+$color-success:         #237F0D !default;
+
+
+// 2 - ## Typography
+$typography-fontsize-h1:        3.125rem !default;
+$typography-fontsize-h2:        2.5rem !default;
+$typography-fontsize-h3:        1.875rem !default;
+$typography-fontsize-h4:        1.25rem !default;
+$typography-fontsize-h5:        1rem !default;
+$typography-fontsize-h6:        0.85rem !default;
+$typography-fontsize-body:      1.25rem !default;
+$typography-fontsize-button:    $typography-fontsize-body !default;
+$typography-fontface-primary:   "Myriad Pro", Roboto, Arial, sans-serif !default;
+$typography-fontface-secondary: "Aktiv Grotesk", "Open Sans", sans-serif !default;
+$typography-fontweight-body:    400 !default;
+$typography-fontweight-heading: 700 !default;
+
+
+// 3 - ## Fonts
+$fonts-directory: "../../assets/fonts" !default;
+
+
+// Default screens for media queries
+$screen-small:      600px !default;
+$screen-medium:     992px !default;
+$screen-large:      1200px !default;
+$screen-small-up:   601px !default;
+$screen-medium-up:  993px !default;
+$screen-large-up:   1201px !default;
+
+
+// 4 - ## User Interface
+
+// Animations
+$animation-duration: 400ms !default;
+
+// Form elements
+$input-padding:             0.5rem 1rem !default;
+$input-background:          rgba(#000,0.01) !default;
+$input-text-align:          left !default;
+$input-text-color:          $color-text-secondary !default;
+$input-border-width:        1px !default;
+$input-border-style:        solid !default;
+$input-border-color:        rgba(#000, 0.1) !default;
+$input-border-radius:       0 !default;
+$input-shadow:              1px 1px 2px rgba(0,0,0,0.07) inset !default;
+$input-focused-shadow:      1px 1px 2px rgba(1,37,43,.1),1px 1px 2px rgba(#000,.03) inset !default;
+$input-focused-background:  rgba(#FFF, 0.15) !default;
+
+//  button
+$btn-default-bg_color:      $color-primary !default;
+$btn-animation_exists:      true !default;
+$btn-insetBoxShadow_exists: false !default;
+
+$btn-darken-amount:       15% !default;
+$btn-disabled-opacity:    .6 !default;
+$btn-margin:              10px auto !default;
+$btn-radius:              21px !default;
+$btn-animation_duration:  .4s !default;
+
+$btn-border_style:   solid !default;
+$btn-border_width:   0 !default;
+$btn-font_align:     center !default;
+$btn-font_color:     #fff !default;
+$btn-font_color_alt: #FFF !default; // For hover & focus state
+$btn-font_family:    inherit !default;
+$btn-font_weight:    inherit !default;
+$btn--text-shadow:   0 0 1px rgba(#000, 0.12), 0 1px 1px rgba(#000, 0.24) !default;
+
+$btn-medium-padding:   10px !default;
+$btn-medium-font_size: 1em !default;
+$btn-large-padding:    $btn-medium-padding + $btn-medium-padding * 1/3 !default;
+$btn-large-font_size:  1.25em !default;
+
+
+
+// 5 - ## Layout

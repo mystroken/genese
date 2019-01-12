@@ -1,0 +1,20 @@
+//---------------------------------------------//
+// Susy config (2.2.12)
+// Docs - http://susy.readthedocs.io/shorthand/
+//---------------------------------------------//
+
+$susy: (
+  columns: 12,
+  math: fluid,
+  container: auto,
+  gutter-position: inside-static,
+  gutters: 6rem/10rem,
+  column-width: 10rem,
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);

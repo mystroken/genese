@@ -14,9 +14,15 @@
  * @since 1.0
  */
 
+/*
+ * Edit this array to fit your needs.
+ */
 $nav_menus = array(
+	// Primary Navigation.
 	'primary' => __( 'Primary Navigation', 'genese' ),
+	// Footer Navigation.
 	'footer'  => __( 'Footer Navigation', 'genese' ),
 );
 
+// Don't touch this line.
 return $nav_menus;

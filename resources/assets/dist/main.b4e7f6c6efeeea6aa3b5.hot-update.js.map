@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./assets/src/js/index.js"],"names":["window","addEventListener"],"mappings":";;;;;;;;;AAAAA,MAAM,CAACC,gBAAP,CAAyB,MAAzB,EAAiC,YAAM,CAEtC,CAFD,E","file":"main.b4e7f6c6efeeea6aa3b5.hot-update.js","sourcesContent":["window.addEventListener( 'load', () => {\n\n});\n"],"sourceRoot":""}

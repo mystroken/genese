@@ -1,0 +1,30 @@
+
+
+a {
+  color: $color-link;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-line: 1px;
+  transition: all cubic-bezier(0,.01,.71,.09) .3s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: $color-link;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-secondary;
+
+    &::after {
+      //width: 100%;
+    }
+  }
+}

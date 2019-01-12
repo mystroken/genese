@@ -1,0 +1,49 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 auto;
+  font-family: $typography-fontface-secondary;
+	font-weight: $typography-fontweight-heading;
+  line-height: 120%;
+  color: darken($color-text-primary, 30);
+
+  a { text-decoration: none; }
+}
+
+h1 {
+	font-size: $typography-fontsize-h1;
+	//margin: ($typography-fontsize-h1 / 2) 0 ($typography-fontsize-h1 / 2.5) 0;
+}
+
+h2 {
+	font-size: $typography-fontsize-h2;
+	//margin: ($typography-fontsize-h2 / 2) 0 ($typography-fontsize-h2 / 2.5) 0;
+}
+
+h3 {
+	font-size: $typography-fontsize-h3;
+  line-height: 130%;
+	//margin: ($typography-fontsize-h3 / 2) 0 ($typography-fontsize-h3 / 2.5) 0;
+}
+
+h4 {
+	font-size: $typography-fontsize-h4;
+  line-height: 140%;
+	//margin: ($typography-fontsize-h4 / 2) 0 ($typography-fontsize-h4 / 2.5) 0;
+}
+
+h5 {
+	font-size: $typography-fontsize-h5;
+  line-height: 140%;
+	//margin: ($typography-fontsize-h5 / 2) 0 ($typography-fontsize-h5 / 2.5) 0;
+}
+
+h6 {
+	font-size: $typography-fontsize-h6;
+  line-height: 160%;
+	//margin: ($typography-fontsize-h6 / 2) 0 ($typography-fontsize-h6 / 2.5) 0;
+}

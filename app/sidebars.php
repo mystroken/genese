@@ -14,9 +14,11 @@
  * @since 1.0
  */
 
+/*
+ * Edit this array to fit your needs.
+ */
 $sidebars = array(
 	// Default sidebar.
-	// Edit it or Remove it to fit your needs.
 	array(
 		'name'          => __( 'Default Sidebar', 'genese' ),
 		'id'            => 'sidebar-1',
@@ -29,4 +31,5 @@ $sidebars = array(
 	// Add some other sidebar here.
 );
 
+// Don't touch this line.
 return $sidebars;

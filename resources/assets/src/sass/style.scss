@@ -1,0 +1,41 @@
+// Configurations - make sure you import variables first
+@import
+  "common/_susy-config",
+  "common/variables",
+  "vendors/modularscale/modularscale",
+  "common/modularscale"
+;
+
+
+//@import "../../bower_components/normalize-scss/sass/_normalize.scss";
+//@import "../../bower_components/susy/sass/_susy.scss";
+
+// Base
+@import
+  //"layouts/fonts",
+  "base/base"
+  //"base/links",
+  //"base/medias",
+  //"base/headings"
+  //"base/form"
+;
+
+// Utils
+//@import "common/global";
+
+// Components
+//@import "components/buttons";
+//@import "components/comments";
+//@import "components/forms";
+//@import "components/grid";
+//@import "components/wp-classes";
+@import
+  "components/widgets"
+;
+
+// Layout
+@import
+  "layouts/general",
+  "layouts/header",
+  "layouts/content"
+;

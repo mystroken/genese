@@ -1,0 +1,41 @@
+
+@font-face {
+	font-family: 'Myriad Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Myriad Pro'),
+	local('Myriad Pro-Regular'),
+	url('#{$fonts-directory}/myriad-pro/MyriadPro-Regular.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'Myriad Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Myriad Pro'),
+  local('Myriad Pro-Italic'),
+  url('#{$fonts-directory}/myriad-pro/MyriadPro-It.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'Myriad Pro';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Myriad Pro'),
+  local('Myriad Pro-Bold'),
+  url('#{$fonts-directory}/myriad-pro/MyriadPro-Bold.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'Myriad Pro';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Myriad Pro'),
+  local('Myriad Pro-BoldIt'),
+  url('#{$fonts-directory}/myriad-pro/MyriadPro-BoldIt.otf') format('opentype');
+}
+
+

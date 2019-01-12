@@ -1,0 +1,27 @@
+//---------------------//
+// Base of layout
+//---------------------//
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+body {;
+  font-family: $typography-fontface-primary;
+}
+
+a{
+  text-decoration: none;
+}
+
+hr {
+  border: 0.5px solid lighten($color-text-primary, 75);
+}
+
+ul, li{
+  list-style: none;
+}
