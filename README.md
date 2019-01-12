@@ -1,14 +1,22 @@
-# :sparkles: :volcano: Genese
+# :sparkles::volcano: Genese :sweat_drops:
 
 > Genese is a WordPress starter theme with a modern front-end development workflow.<br>Based on HTML5 Boilerplate, BrowserSync & WebPack (HMR).
 
-#### —  Features
+<br>
 
-* Modern front-end development workflow:
-  * WebPack (with HMR)
-  * BrowserSync for auto-reload.
-* WordPress development workflow enhanced:
-  * Template wrapper: remove repetitive includes into template files.
+### :tada: Features
+
+**:pushpin: Modern front-end development workflow:**
+
+* Hot Module Replacement for Js & Scss files.
+* BrowserSync to watch changes on PHP files.
+
+<br>
+
+**:pushpin: WordPress development workflow enhanced:**
+
+* Template wrapper: removes repetitive inclusions in template files.
+* A nice organization of the code with some SEO snippets.
 
 ## Usage
 
@@ -26,6 +34,18 @@ cd genese && rm -rf .git/
 
 #### 3. Enjoy coding your theme with Genese.
 
+```shell
+genese/               # → Root folder for the project
+├── app/
+        ├── inc/      # → WordPress Hooks and miscellanous helper functions.
+        └── walkers/
+├── resources/
+        ├── assets/   # → Frontend assets source and Configs of compiling process.
+        ├── lang/
+        └── scripts/  # → Do touch, scripts to compile assets.
+└── template-parts/
+```
+
 * 3.1 — Setup the theme.
   - 3.1.1 — Declare navigations
   - 3.1.2 — Declare widget areas (sidebars)
@@ -38,7 +58,7 @@ cd genese && rm -rf .git/
     - 3.3.2.1 — Index views (index.php, archive.php, search.php)
     - 3.3.2.2 — Single views (single.php, page.php)
 
-## Thanks
+## Inspired by
 
 * [https://github.com/bionikspoon/webpack-hmr-wordpress/](https://github.com/bionikspoon/webpack-hmr-wordpress/)
 * [https://github.com/roots/sage](https://github.com/roots/sage)
