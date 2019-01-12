@@ -18,6 +18,8 @@
 * Template wrapper: removes repetitive inclusions in template files.
 * A nice organization of the code with some SEO snippets.
 
+<br>
+
 ## Usage
 
 #### 1. Clone the repository to the WordPress theme directory.
