@@ -1,6 +1,6 @@
 # :sparkles::volcano: Genese :sweat_drops:
 
-[![star this repo](http://githubbadges.com/star.svg?user=mystroken&repo=genese)](http://github.com/mystroken/genese)
+[![](https://img.shields.io/github/stars/badges/shields.svg?label=Stars&style=social?style=plastic)](https://github.com/mystroken/genese)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mystroken/genese/issues)
 <br>
 
