@@ -1,4 +1,4 @@
-# :sparkles::volcano: Genese [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%20170%20free%20design%20blocks%20based%20on%20Bootstrap%204&url=https://www.froala.com/design-blocks&via=froala&hashtags=bootstrap,design,templates,blocks,developers)
+# :sparkles::volcano: Genese  [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://twitter.com/intent/tweet?text=Have%20a%20look%20on%20this%20interesting%20WordPress%20starter%20theme%20with%20a%20modern%20front-end%20development%20workflow&url=https://github.com/mystroken/genese&via=mystroken&hashtags=wordpress,boilerplate,webpack4,browserSync,hmr,developers)
 
 [![](https://img.shields.io/github/stars/badges/shields.svg?label=Stars&style=social?style=plastic)](https://github.com/mystroken/genese)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mystroken/genese/issues)
