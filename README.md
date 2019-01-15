@@ -8,6 +8,8 @@
 
 ### :tada: Features
 
+<br>
+
 **:pushpin: Modern front-end development workflow:**
 
 * Hot Module Replacement for Js & Scss files.
