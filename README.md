@@ -1,5 +1,8 @@
 # :sparkles::volcano: Genese :sweat_drops:
 
+http://githubbadges.com/star.svg?user=mystroken&repo=genese&background=007ecg&color=bbb&style=flat
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mystroken/genese/issues)
 <br>
 
 > Genese is a WordPress starter theme with a modern front-end development workflow.<br>Based on HTML5 Boilerplate, BrowserSync & WebPack (HMR).
