@@ -61,6 +61,7 @@ Install npm dependencies
 npm install
 ```
 Configure the assets bundling
+```./resources/assets/config.js```
 Start the dev script
 ```bash
 npm run start
