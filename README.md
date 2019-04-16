@@ -55,11 +55,13 @@ genese/               # → Root folder for the project
 ```
 
 
-* 3.1 — Customize the frontend.
+## 3.1 — Customize the frontend.
 Install npm dependencies
 ```bash
 npm install
 ```
+Configure the assets bundling
+Start the dev script
 ```bash
 npm run start
 ```
@@ -68,10 +70,12 @@ npm run build
 ```
   - 3.1.1 — Customize webpack
   - 3.1.2 — Include scripts into WordPress
-* 3.2 — Setup the theme.
+ 
+## 3.2 — Setup the theme.
   - 3.2.1 — Declare navigations
   - 3.2.2 — Declare widget areas (sidebars)
-* 3.3 — Customize templates
+ 
+## 3.3 — Customize templates
   - 3.3.1 — Customize the base template
   - 3.3.2 — Customize the template parts
     - 3.3.2.1 — Index views (index.php, archive.php, search.php)
