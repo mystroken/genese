@@ -56,7 +56,8 @@ genese/               # → Root folder for the project
 
 
 ## 3.1 — Customize the frontend.
-Install npm dependencies
+First you should get Nodejs installed on your machine.
+Then install npm dependencies
 ```bash
 npm install
 ```
