@@ -44,7 +44,7 @@ if ( ! function_exists( 'genese_setup' ) ) :
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/register_nav_menus.
 		 */
-		$nav_menus = require_once get_stylesheet_directory() . '/app/navigations.php';
+		$nav_menus = require get_stylesheet_directory() . '/app/navigations.php';
 		if ( is_array( $nav_menus ) && ! empty( $nav_menus ) ) {
 			register_nav_menus( $nav_menus );
 		}
@@ -149,7 +149,7 @@ add_action( 'wp_enqueue_scripts', 'genese_enqueue_scripts', 100 );
  */
 function genese_widgets_init() {
 
-	$sidebars = require_once get_stylesheet_directory() . '/app/sidebars.php';
+	$sidebars = require get_stylesheet_directory() . '/app/sidebars.php';
 
 	foreach ( $sidebars as $sidebar ) {
 
