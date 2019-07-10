@@ -5,8 +5,7 @@
 .vscode/
 node_modules
 bower_components
-assets/*.hot-update.js
-assets/*.hot-update.json
+resources/assets/dist/*.hot-update.*
 yarn.lock
 composer.lock
 npm-debug.log
